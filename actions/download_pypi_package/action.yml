@@ -1,0 +1,22 @@
+name: "Download PyPi Package"
+author: "Chris Ostrouchov"
+description: "Download PyPi Package"
+
+runs:
+  using: "composite"
+  steps:
+    - run: "${{ github.action_path }}/script.py"
+      shell: python
+      env:
+        ACTION_INPUT: ${{ inputs }}
+
+inputs:
+  name:
+    description: "PyPi Package Name"
+    required: true
+  version:
+    description: "PyPi Package Version"
+    required: true
+  sha256:
+    description: "PyPi Package sha256"
+    required: true

@@ -1,0 +1,15 @@
+name: Test
+
+jobs:
+  test:
+    name: 'test'
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions:actions/checkout@master
+
+      - name: 'Test Action'
+        uses: ./actions/download_pypi_package
+        with:
+          name: numpy
+          version: 1.24.3
+          sha256: ab344f1bf21f140adab8e47fdbc7c35a477dc01408791f8ba00d018dd0bc5155
